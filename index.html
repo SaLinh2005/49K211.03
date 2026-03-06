@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UNIMENTOR Register</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1 class="logo">
+UNI<span>MENTOR</span>
+</h1>
+
+<p class="subtitle">
+Kết nối sinh viên với mentor để hỗ trợ học tập
+</p>
+
+<div class="line"></div>
+
+<h3>Đăng ký tài khoản mới 👋</h3>
+
+<form id="registerForm">
+
+<input type="text" id="name" placeholder="Họ và tên">
+<p class="error" id="nameError"></p>
+
+<input type="email" id="email" placeholder="Email sinh viên">
+<p class="error" id="emailError"></p>
+
+<input type="password" id="password" placeholder="Mật khẩu">
+<p class="error" id="passError"></p>
+
+<input type="password" id="confirm" placeholder="Nhập lại mật khẩu">
+<p class="error" id="confirmError"></p>
+
+<div class="agree">
+<input type="checkbox">
+<span>
+Tôi đồng ý với
+<a href="#">Điều khoản dịch vụ</a>
+và
+<a href="#">Chính sách bảo mật</a>
+</span>
+</div>
+
+<button type="submit" class="btn">
+Đăng ký
+</button>
+
+</form>
+
+<p class="login-text">ĐÃ CÓ TÀI KHOẢN?</p>
+
+<a href="#" class="login-link">
+Đăng nhập ngay →
+</a>
+
+</div>
+
+<!-- SUCCESS SCREEN -->
+
+<div class="card success-card" id="successBox">
+
+<div class="success-icon">✔</div>
+
+<h2>Đăng ký thành công!</h2>
+
+<p>
+Chào mừng bạn gia nhập cộng đồng UNIMENTOR.
+Tài khoản của bạn đã sẵn sàng.
+</p>
+
+<button class="btn">
+Đăng nhập ngay
+</button>
+
+<button class="btn-light">
+Quay về trang chủ
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("registerForm").addEventListener("submit",function(e){
+
+e.preventDefault()
+
+let name=document.getElementById("name").value
+let email=document.getElementById("email").value
+let pass=document.getElementById("password").value
+let confirm=document.getElementById("confirm").value
+
+let valid=true
+
+document.querySelectorAll(".error").forEach(e=>e.innerText="")
+
+if(name===""){
+document.getElementById("nameError").innerText="Vui lòng nhập họ tên"
+valid=false
+}
+
+if(!email.includes("@")){
+document.getElementById("emailError").innerText="Email không hợp lệ"
+valid=false
+}
+
+if(pass.length<8){
+document.getElementById("passError").innerText="Mật khẩu phải >= 8 ký tự"
+valid=false
+}
+
+if(pass!==confirm){
+document.getElementById("confirmError").innerText="Mật khẩu không khớp"
+valid=false
+}
+
+if(valid){
+
+document.querySelector(".card").style.display="none"
+
+document.getElementById("successBox").style.display="block"
+
+}
+
+})
+
+</script>
+
+</body>
+</html>
