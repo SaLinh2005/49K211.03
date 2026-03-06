@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNIMENTOR - Đăng nhập</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            colors: {
+              brandBlue: "#1F3B8A",
+              brandBlueDark: "#0B1E43",
+              brandOrange: "#F26A2B",
+            },
+            boxShadow: {
+              card: "0 22px 55px rgba(0,0,0,0.28)",
+              button: "0 12px 26px rgba(242,106,43,0.25)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body class="font-sans antialiased">
+    <main
+      class="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-brandBlueDark via-[#0F2F68] to-[#2E63D6]"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_520px_at_50%_110%,rgba(90,155,255,0.42)_0%,rgba(46,99,214,0.0)_60%)]"
+      ></div>
+
+      <div
+        class="relative mx-auto flex min-h-screen max-w-[1100px] items-center justify-center px-5 py-12 sm:px-8"
+      >
+        <section
+          class="w-full max-w-[430px] rounded-[26px] bg-white px-7 pb-10 pt-9 shadow-card sm:px-11 sm:pb-12 sm:pt-10"
+          aria-label="Đăng nhập"
+        >
+          <div class="flex flex-col items-center text-center">
+            <div class="mb-4">
+              <img
+                src="./assets/due-logo.png"
+                alt="Logo DUE"
+                class="h-[54px] w-[54px] select-none object-contain"
+                draggable="false"
+              />
+            </div>
+
+            <h1
+              class="text-[36px] font-extrabold leading-none tracking-[0.03em] text-brandBlue sm:text-[38px]"
+            >
+              <span class="text-brandBlue">UNI</span
+              ><span class="text-brandOrange">MENTOR</span>
+            </h1>
+            <p
+              class="mt-2 max-w-[320px] text-[12px] font-medium leading-4 text-slate-600/90"
+            >
+              Kết nối sinh viên với mentor để hỗ trợ học tập
+            </p>
+
+            <p class="mt-6 text-[16px] font-medium text-slate-800">
+              Chào mừng bạn quay trở lại <span aria-hidden="true">👋</span>
+            </p>
+          </div>
+
+          <form id="loginForm" class="mt-7 space-y-4" novalidate>
+            <label
+              class="group flex h-[52px] w-full items-center gap-3 rounded-[12px] border border-[#111827]/45 bg-[#F1F1F1] px-4 transition focus-within:border-brandBlue/70 focus-within:ring-2 focus-within:ring-brandBlue/15"
+            >
+              <span class="grid h-9 w-9 place-items-center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M4 6.8C4 6.36 4.36 6 4.8 6H19.2C19.64 6 20 6.36 20 6.8V17.2C20 17.64 19.64 18 19.2 18H4.8C4.36 18 4 17.64 4 17.2V6.8Z"
+                    stroke="#111827"
+                    stroke-opacity="0.75"
+                    stroke-width="1.6"
+                  />
+                  <path
+                    d="M5.2 7.4L12 12.7L18.8 7.4"
+                    stroke="#111827"
+                    stroke-opacity="0.75"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <input
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="Email sinh viên"
+                class="h-full w-full bg-transparent text-[14px] font-medium text-slate-800 placeholder:text-slate-500/85 focus:outline-none"
+              />
+            </label>
+
+            <label
+              class="group flex h-[52px] w-full items-center gap-3 rounded-[12px] border border-[#111827]/45 bg-[#F1F1F1] px-4 transition focus-within:border-brandBlue/70 focus-within:ring-2 focus-within:ring-brandBlue/15"
+            >
+              <span class="grid h-9 w-9 place-items-center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M7 10V8.2C7 5.88 8.79 4 11 4H13C15.21 4 17 5.88 17 8.2V10"
+                    stroke="#111827"
+                    stroke-opacity="0.75"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M7.2 10H16.8C17.46 10 18 10.54 18 11.2V19C18 19.66 17.46 20.2 16.8 20.2H7.2C6.54 20.2 6 19.66 6 19V11.2C6 10.54 6.54 10 7.2 10Z"
+                    stroke="#111827"
+                    stroke-opacity="0.75"
+                    stroke-width="1.6"
+                  />
+                </svg>
+              </span>
+
+              <input
+                id="password"
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                placeholder="Mật khẩu"
+                class="h-full w-full bg-transparent text-[14px] font-medium text-slate-800 placeholder:text-slate-500/85 focus:outline-none"
+              />
+
+              <button
+                id="togglePassword"
+                type="button"
+                class="grid h-9 w-9 place-items-center rounded-[10px] text-slate-800 transition hover:bg-black/5"
+                aria-label="Hiện/ẩn mật khẩu"
+                aria-pressed="false"
+              >
+                <!-- Mắt (viền mảnh), chỉ bật/tắt dấu gạch chéo -->
+                <svg
+                  id="eyeIcon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="h-[20px] w-[20px] text-[#111827]/80"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2.5 12C4.6 7.5 8 5.2 12 5.2C16 5.2 19.4 7.5 21.5 12C19.4 16.5 16 18.8 12 18.8C8 18.8 4.6 16.5 2.5 12Z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 15.2C10.23 15.2 8.8 13.77 8.8 12C8.8 10.23 10.23 8.8 12 8.8C13.77 8.8 15.2 10.23 15.2 12C15.2 13.77 13.77 15.2 12 15.2Z"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    id="eyeSlash"
+                    d="M4 4L20 20"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </label>
+
+            <label class="flex items-center gap-2 pt-1 cursor-pointer select-none">
+              <input
+                id="remember"
+                type="checkbox"
+                class="peer sr-only"
+              />
+              <span
+                class="inline-flex h-[16px] w-[16px] items-center justify-center rounded-[3px] border border-[#111827]/70 transition-colors peer-checked:border-brandOrange peer-checked:bg-brandOrange peer-checked:[&>svg]:opacity-100"
+              >
+                <svg
+                  viewBox="0 0 16 16"
+                  class="h-[10px] w-[10px] text-white opacity-0 transition-opacity"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 8.2L6.1 11.3L13 4.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="text-[12px] font-medium text-slate-600">
+                Ghi nhớ đăng nhập
+              </span>
+            </label>
+
+            <p
+              id="loginError"
+              class="hidden -mt-1 text-[13px] font-medium leading-4 text-[#FF0000]"
+              role="alert"
+              aria-live="polite"
+            >
+              Email hoặc mật khẩu không chính xác
+            </p>
+
+            <button
+              type="submit"
+              class="mt-2 h-[54px] w-full rounded-[14px] bg-brandOrange text-[18px] font-extrabold tracking-wide text-white shadow-button transition-all duration-200 ease-out hover:-translate-y-[1px] hover:bg-[#FF7A3E] hover:shadow-[0_18px_34px_rgba(242,106,43,0.32)] active:translate-y-0 active:brightness-95"
+            >
+              Đăng nhập
+            </button>
+
+            <div class="pt-4">
+              <div class="flex items-center gap-4">
+                <div class="h-px flex-1 bg-slate-300"></div>
+                <div class="text-[11px] font-semibold tracking-[0.14em] text-slate-500">
+                  CHƯA CÓ TÀI KHOẢN?
+                </div>
+                <div class="h-px flex-1 bg-slate-300"></div>
+              </div>
+              <div class="mt-2 text-center">
+                <a href="#" class="text-[12px] font-semibold text-[#1D4ED8] hover:underline">
+                  Đăng ký ngay
+                </a>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script src="./login.js"></script>
+  </body>
+</html>
+
