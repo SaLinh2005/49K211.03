@@ -1,0 +1,60 @@
+// Topbar.jsx
+import logo from './assets/Background.png'
+const user = JSON.parse(localStorage.getItem('user'))
+export default function Topbar({ user, unreadCount }) {
+  return (
+    <header className="topbar">
+      <div className="brand">
+        <img src={logo} alt="logo" className="logo-img" />
+        <div className="brand-text">
+          <div className="brand-title">
+            <span className="brand-orange">UNI</span>MENTOR
+          </div>
+          <div className="brand-subtitle">
+            TRƯỜNG ĐH KINH TẾ - ĐH ĐÀ NẴNG
+          </div>
+        </div>
+      </div>
+
+      <nav className="nav">
+        <a href="#home">Trang chủ</a>
+        <a href="#profile" className="active">Mentor</a>
+        <a href="#mentor">Hồ sơ</a>
+        <a href="#chat" className="chat-link">
+          Nhắn tin
+          {unreadCount > 0 && (
+            <span className="badge">
+              <span className="badge-text">{unreadCount}</span>
+            </span>
+          )}
+        </a>
+      </nav>
+
+<div className="topbar-right">
+  <svg className="bell-icon" viewBox="0 0 24 24" fill="none">
+    <path
+      d="M15 17H20L18.595 15.595C18.2139 15.2139 17.9999 14.697 18 14.158V11C18.0003 8.45671 16.3976 6.18933 14 5.341V5C14 3.89617 13.1038 3 12 3C10.8962 3 10 3.89617 10 5V5.341C7.67 6.165 6 8.388 6 11V14.159C6 14.697 5.786 15.214 5.405 15.595L4 17H9M15 17V18C15 19.6557 13.6557 21 12 21C10.3443 21 9 19.6557 9 18V17M15 17H9"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+
+  <div className="divider"></div>
+
+  <div className="user-mini">
+    <img
+      src={
+        user?.avatar ||
+        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80'
+      }
+      alt={user?.name || 'user'}
+    />
+  </div>
+
+  <button className="logout-btn">Đăng xuất</button>
+</div>
+    </header>
+  )
+}
