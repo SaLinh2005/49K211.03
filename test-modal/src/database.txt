@@ -1,0 +1,11 @@
+SCREATE TABLE mentor_reviews (
+  id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+  mentor_id text NOT NULL,
+  rating int2 NOT NULL,
+  feedback text,
+  created_at timestamptz DEFAULT now()
+);
+
+-- Phân quyền cho phép Insert từ Frontend
+ALTER TABLE mentor_reviews ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Enable insert for anon" ON mentor_reviews FOR INSERT WITH CHECK (true);
